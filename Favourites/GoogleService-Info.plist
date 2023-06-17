@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>238520376538-hhjc0bui2t3akub50ma9r2967qt1fh77.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.238520376538-hhjc0bui2t3akub50ma9r2967qt1fh77</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAWuNAWw38RyxYBv5FqEkUmOdZ9keGGcTQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>238520376538</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ru.fibeapp.Favourites</string>
+	<key>PROJECT_ID</key>
+	<string>favourites-b647d</string>
+	<key>STORAGE_BUCKET</key>
+	<string>favourites-b647d.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:238520376538:ios:1b37c2146c9dd4a73499e3</string>
+</dict>
+</plist>
