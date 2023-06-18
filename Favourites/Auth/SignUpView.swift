@@ -100,10 +100,10 @@ struct SignUpView: View {
         }
     }
 }
-//
-//struct SignUpView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SignUpView()
-//            .environmentObject(AuthenticationViewModel())
-//    }
-//}
+
+struct SignUpView_Previews: PreviewProvider {
+    static var previews: some View {
+        SignUpView()
+            .environmentObject(AuthenticationViewModel())
+    }
+}

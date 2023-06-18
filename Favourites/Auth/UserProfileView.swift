@@ -65,13 +65,13 @@ struct UserProfileView: View {
         viewModel.signOut()
     }
 }
-//
-//struct UserProfileView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NavigationStack {
-//            UserProfileView()
-//        }
-//        .environmentObject(AuthenticationViewModel())
-//
-//    }
-//}
+
+struct UserProfileView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationStack {
+            UserProfileView()
+        }
+        .environmentObject(AuthenticationViewModel())
+
+    }
+}

@@ -2,34 +2,34 @@ import Foundation
 import FirebaseAuth
 
 enum AuthenticationState {
-  case unauthenticated
-  case authenticating
-  case authenticated
+    case unauthenticated
+    case authenticating
+    case authenticated
 }
 
 enum AuthenticationFlow {
-  case login
-  case signUp
+    case login
+    case signUp
 }
 
 @MainActor
 class AuthenticationViewModel: ObservableObject {
-    @Published var email: String = "motiw@icloud.com"
-    @Published var password: String = "123456"
+    @Published var email: String = ""
+    @Published var password: String = ""
     @Published var confirmPassword: String = ""
-
+    
     @Published var flow: AuthenticationFlow = .login
-
+    
     @Published var isValid: Bool  = false
     @Published var authenticationState: AuthenticationState = .unauthenticated
     private var authStateHandle: AuthStateDidChangeListenerHandle?
     @Published var user: User?
     @Published var errorMessage: String = ""
     @Published var displayName: String = ""
-    static var shared = AuthenticationViewModel()
-    private init() {
+    
+    init() {
         registerAuthStateHandler()
-
+        
         $flow
             .combineLatest($email, $password, $confirmPassword)
             .map { flow, email, password, confirmPassword in
@@ -57,19 +57,19 @@ class AuthenticationViewModel: ObservableObject {
     }
     
     private func wait() async {
-      do {
-        print("Wait")
-        try await Task.sleep(nanoseconds: 1_000_000_000)
-        print("Done")
-      }
-      catch { }
+        do {
+            print("Wait")
+            try await Task.sleep(nanoseconds: 1_000_000_000)
+            print("Done")
+        }
+        catch { }
     }
     
     func reset() {
-//        flow = .login
-//        email = ""
-//        password = ""
-//        confirmPassword = ""
+        flow = .login
+        email = ""
+        password = ""
+        confirmPassword = ""
     }
 }
 
@@ -101,11 +101,23 @@ extension AuthenticationViewModel {
     }
     
     func signOut() {
-//        authenticationState = .unauthenticated
+        do {
+            try Auth.auth().signOut()
+        }
+        catch {
+            print(error)
+            errorMessage = error.localizedDescription
+        }
     }
     
     func deleteAccount() async -> Bool {
-//        authenticationState = .unauthenticated
-        return true
+        do {
+            try await user?.delete()
+            return true
+        }
+        catch {
+            errorMessage = error.localizedDescription
+            return false
+        }
     }
 }

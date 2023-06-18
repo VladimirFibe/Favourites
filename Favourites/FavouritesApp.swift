@@ -12,21 +12,19 @@ struct FavouritesApp: App {
         }
     }
     var content: some View {
-        NavigationStack {
-            AuthenticatedView {
-                Image(systemName: "number.circle.fill")
-                    .resizable()
-                    .frame(width: 100, height: 100)
-                    .foregroundColor(.pink)
-                    .aspectRatio(contentMode: .fit)
-                    .clipShape(Circle())
-                Text("Welcome to Favourites!")
-                    .font(.title)
-                Text("You need to be logged in to use this app.")
-            } content: {
-                FavouriteNumberView()
-                Spacer()
-            }
+        AuthenticatedView {
+            Image(systemName: "number.circle.fill")
+                .resizable()
+                .frame(width: 100, height: 100)
+                .foregroundColor(.pink)
+                .aspectRatio(contentMode: .fit)
+                .clipShape(Circle())
+            Text("Welcome to Favourites!")
+                .font(.title)
+            Text("You need to be logged in to use this app.")
+        } content: {
+            FavouriteNumberView()
+            Spacer()
         }
     }
 }

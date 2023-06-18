@@ -13,10 +13,3 @@ struct AuthenticationView: View {
         }
     }
 }
-//
-//struct AuthenticationView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AuthenticationView()
-//            .environmentObject(AuthenticationViewModel())
-//    }
-//}

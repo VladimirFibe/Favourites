@@ -81,10 +81,10 @@ struct LoginView: View {
         }
     }
 }
-//
-//struct LoginView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LoginView()
-//            .environmentObject(AuthenticationViewModel())
-//    }
-//}
+
+struct LoginView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginView()
+            .environmentObject(AuthenticationViewModel())
+    }
+}

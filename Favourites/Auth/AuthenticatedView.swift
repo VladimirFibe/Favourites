@@ -2,7 +2,7 @@ import SwiftUI
 
 struct AuthenticatedView<Content, Unauthenticated>: View where Content: View, Unauthenticated: View {
     
-    @StateObject private var viewModel = AuthenticationViewModel.shared
+    @StateObject private var viewModel = AuthenticationViewModel()
     @State private var presentingLoginScreen = false
     @State private var presentingProfileScreen = false
     
